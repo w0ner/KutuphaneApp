@@ -1,0 +1,64 @@
+﻿@model Book
+<div class="right_col" role="main">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Kitap Ödünç Ver</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br />
+                        <form enctype="multipart/form-data" asp-controller="Book" asp-action="Give" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                            <input asp-for="ID" type="hidden" />
+                            <input asp-for="Writer" type="hidden" />
+                            <input asp-for="Picture" type="hidden" />
+                            <div class="item form-group">
+                                <label class="col-form-label col-12 col-sm-2 label-align" asp-for="Name">
+                                </label>
+                                <div class="col-12 col-sm-10">
+                                    <input asp-for="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-12 col-sm-2 label-align" asp-for="MembersID">
+                                </label>
+                                <div class="col-12 col-sm-10">
+                                    <select class="form-control" asp-for="MembersID" asp-items="@ViewBag.Members">
+                                        <option value="">Üye Seçiniz</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-12 col-sm-2 label-align" asp-for="BuyDate">
+                                </label>
+                                <div class="col-12 col-sm-10">
+                                    <input asp-for="BuyDate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-12 col-sm-2 label-align" asp-for="DataDate">
+                                </label>
+                                <div class="col-12 col-sm-10">
+                                    <input asp-for="DataDate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="item form-group">
+                                <div class="col-12">
+                                    <a asp-controller="Book" asp-action="Index" class="btn btn-primary" style="color:#fff">İptal</a>
+                                    <button class="btn btn-primary" type="reset">Temizle</button>
+                                    <button type="submit" class="btn btn-success">Kitabı Ver</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /page content -->
